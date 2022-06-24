@@ -1,14 +1,15 @@
 const content = document.querySelector('.content');
+//template for all the cards which showed the books
 const card_template = document.createElement("div");
 card_template.classList.add('card');
 
-function Book(title,author,pages,readStatus){
+function Book(title,author,pages,readStatus){//book object
     this.title=title;
     this.author=author;
     this.pages=pages;
     this.readStatus=readStatus;
 };
-Book.prototype.info = function(){
+Book.prototype.info = function(){// book prototype - used in a previous exercise not used in the app
     str=this.title+" by "+ this.author+", "+this.pages+"pages, ";
     if(this.readStatus)
         str+="read completly";
@@ -17,14 +18,14 @@ Book.prototype.info = function(){
     return str;
 };
 
-let myLibrary = [];
+let myLibrary = [];//library array used to store books
 
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
     displaylib(myLibrary)
 };
 
-function displaylib(lib){
+function displaylib(lib){// function to display the books in cards from the books present in library array
     //remove old childred and replace with new ones
     content.replaceChildren();
     //adding new children
@@ -66,7 +67,7 @@ function displaylib(lib){
 
 const book_form= document.querySelector('#book-form');
 book_form.addEventListener('submit',handleSubmit);
-function handleSubmit(e) {
+function handleSubmit(e) {// add a book to library array when form is submitted
     e.preventDefault();
     const formData = new FormData(e.target);
     const formProps = Object.fromEntries(formData);
@@ -99,7 +100,7 @@ function unBlurBg(){
     container.classList.remove('blur');
 }
 
-const cardbtn = document.querySelector('#cardbtn');
+const cardbtn = document.querySelector('#cardbtn');//add book button
 //cardbtn.style.backgroundColor = "red";
 cardbtn.addEventListener("click",openTheForm);
 
