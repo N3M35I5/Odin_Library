@@ -52,7 +52,7 @@ function displaylib(lib){
         const delbtn=document.createElement("button");
         delbtn.addEventListener("click",()=>{
             var filtered = myLibrary.filter(function(value, index, arr){ 
-                return value.title !== book.title;
+                return value !== book;
             });
             myLibrary=filtered;
             displaylib(myLibrary);
@@ -78,5 +78,3 @@ function handleSubmit(e) {
     addBookToLibrary(book);
 };
 
-
-//console.log(myLibrary);
