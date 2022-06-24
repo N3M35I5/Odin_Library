@@ -76,5 +76,37 @@ function handleSubmit(e) {
     const readbtn = formProps.readbtn;
     const book = new Book(title,author,pages,readbtn);
     addBookToLibrary(book);
+    closeTheForm();
+    book_form.reset();
 };
 
+function openTheForm() {
+    document.getElementById("popupForm").style.display = "block";
+    blurBg();
+}
+  
+function closeTheForm() {
+    document.getElementById("popupForm").style.display = "none";
+    unBlurBg();
+}
+
+function blurBg(){
+    const container = document.querySelector('.container');
+    container.classList.add('blur');
+}
+function unBlurBg(){
+    const container = document.querySelector('.container');
+    container.classList.remove('blur');
+}
+
+const cardbtn = document.querySelector('#cardbtn');
+//cardbtn.style.backgroundColor = "red";
+cardbtn.addEventListener("click",openTheForm);
+
+const cancelbtn = document.querySelector('#cancelbtn');
+cancelbtn.addEventListener('click',closeTheForm);
+/* Testing 
+const book = new Book("A","A",123,true);
+addBookToLibrary(book);
+displaylib(myLibrary);
+*/

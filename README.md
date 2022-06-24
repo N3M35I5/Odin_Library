@@ -1,5 +1,8 @@
 # Odin_Library
 This is my submission for the Library exercise in the Odin Project.
 
-for tomorrow
-https://www.w3docs.com/snippets/javascript/how-to-create-a-popup-form-using-javascript.html
+Odin Project : https://www.theodinproject.com/
+
+Blur for the popup reference: https://www.youtube.com/watch?v=snhpoxtLugU and https://stackoverflow.com/questions/64322223/how-to-make-popup-with-blurred-background
+
+Popup reference : https://www.w3docs.com/snippets/javascript/how-to-create-a-popup-form-using-javascript.html

@@ -49,7 +49,7 @@ table {
 
 /*My Code*/
 
-body{
+.container{
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -58,7 +58,7 @@ body{
     gap : 10px;
     background-color: gray;
 }
-.footer,.header,.sidebar,.card{
+.footer,.header,.card{
     background-color: white;
 }
 .header{
@@ -81,29 +81,40 @@ body{
     padding: 10px;
     border-radius: 5px;
 }
-.sidebar{
-    grid-row: 2/3;
-    grid-column: 1/2;
-}
-.sidebar>form{
+
+#popupForm>form{
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 20px;
 }
-.sidebar>input{
-    max-width: 170px;
+
+.formPopup {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 25%;
+    background-color: white;
+    border: black solid 1px;
+    border-radius: 5px;
 }
+.blur{
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+}
+
 #submitbtn{
     max-width: fit-content;
     align-self: center;
 }
 .content{
     grid-row: 2/3;
-    grid-column: 2/3;
+    grid-column: 1/3;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    padding: 20px;
 }
 /*class for the cards*/
 .card{
@@ -111,6 +122,15 @@ body{
     height: 200px;
     padding: 20px;
     font-size: medium;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: black solid 1px;
+    border-radius: 5px;
+}
+.card>button{
+    width: 80px;
 }
 .footer{
     grid-column: 1/-1;
@@ -122,4 +142,8 @@ body{
 }
 .footer>p{
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
