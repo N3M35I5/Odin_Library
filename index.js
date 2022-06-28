@@ -3,6 +3,24 @@ const content = document.querySelector('.content');
 const card_template = document.createElement("div");
 card_template.classList.add('card');
 
+class Book{
+    constructor(title,author,pages,readStatus){
+        this.title=title;
+        this.author=author;
+        this.pages=pages;
+        this.readStatus=readStatus;
+    }
+    info(){
+        str=this.title+" by "+ this.author+", "+this.pages+"pages, ";
+        if(this.readStatus)
+            str+="read completly";
+        else
+            str+="not read yet";
+        return str;
+    }
+}
+
+/*
 function Book(title,author,pages,readStatus){//book object
     this.title=title;
     this.author=author;
@@ -17,7 +35,7 @@ Book.prototype.info = function(){// book prototype - used in a previous exercise
         str+="not read yet";
     return str;
 };
-
+*/
 let myLibrary = [];//library array used to store books
 
 function addBookToLibrary(newBook) {
